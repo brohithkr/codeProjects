@@ -1,0 +1,7 @@
+find out info about 6 indian states. Specifically their population, debt, and capital city.
+Give the data to me in this format: {
+    'states':['state1','state2'],
+    'capital':['capital of state 1','capital of state 2' so on],
+    'population' : ['population of state1','population of state2' so on],
+    'debt':['follow same above format']
+    }
