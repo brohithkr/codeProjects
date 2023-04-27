@@ -1,0 +1,15 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(206, 239, 239);
+    /* text-align: center; */
+    
+}
+
+ul.inner li {
+    list-style-type: disclosure-closed ;
+    color: rgb(36, 55, 55);
+}
+ol.inner li {
+    list-style-type: lower-greek;
+    color: rgb(36, 55, 55);
+}
