@@ -1,7 +1,8 @@
-find out info about 6 indian states. Specifically their population, debt, and capital city.
-Give the data to me in this format: {
-    'states':['state1','state2'],
-    'capital':['capital of state 1','capital of state 2' so on],
-    'population' : ['population of state1','population of state2' so on],
-    'debt':['follow same above format']
-    }
+create an html file with css appplied.\
+That should contain a form that takes input of\
+name, company, year, kms driven,and fuel type.\
+the puspose of webpage is to take all above inputs.\
+and predict price. The button at bottom should\
+be labelled predict and the title of page and heading should be\
+Price Prediction Model. You can capitalize field names to make them look good. \
+the style of css should be neat and sleek design.

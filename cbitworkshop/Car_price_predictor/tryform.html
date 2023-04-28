@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Price Predictor</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #ccc;
+			margin: 0 auto;
+			max-width: 500px;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #333;
+			font-weight: bold;
+		}
+		input[type="text"], select {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			width: 100%;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<h1>Car Price Predictor</h1>
+	<form>
+		<label for="company">Company:</label>
+		<select id="company" name="company" >
+			{% for company in companies %}
+			<option value="{{company}}">{{company}}</option>
+		</select>
+			
+		<label for="model">Car Model:</label>
+		<select id="model" name="model" >
+			{% for model in names models %}
+			<option value="{{model}}">{{model}}</option>
+		</select>
+		
+
+		<label for="year">Year:</label>
+		<select id="year" name="year" >
+			{% for year in years %}
+			<option value="{{year}}">{{year}}</option>
+		</select>
+
+		<label for="kms">Kms Driven:</label>
+		<input type="text" id="kms" name="kms" placeholder="Enter the kms driven">
+
+		<label for="fuel">Fuel Type:</label>
+		<select id="fuel" name="fuel">
+			<option value="Petrol">Petrol</option>
+			<option value="Diesel">Diesel</option>
+			<option value="Cng">CNG</option>
+		</select>
+
+		<input type="submit" value="Predict">
+		<label for="price">Price:</label>
+	</form>
+	
+</body>
+</html>
