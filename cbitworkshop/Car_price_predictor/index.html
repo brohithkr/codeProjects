@@ -49,28 +49,31 @@
 </head>
 <body>
 	<h1>Car Price Predictor</h1>
-	<form>
+	<form action="/" >
 		<label for="company">Company:</label>
 		<select id="company" name="company" >
 			{% for company in companies %}
 			<option value="{{company}}">{{company}}</option>
+			{% endfor %}
 		</select>
 			
 		<label for="model">Car Model:</label>
 		<select id="model" name="model" >
 			{% for model in names models %}
 			<option value="{{model}}">{{model}}</option>
+			{% endfor %}
 		</select>
 		
 
-		<label for="year">Year:</label>
+		<label for="year">Year you bought the car::</label>
 		<select id="year" name="year" >
 			{% for year in years %}
 			<option value="{{year}}">{{year}}</option>
+			{% endfor %}
 		</select>
 
 		<label for="kms">Kms Driven:</label>
-		<input type="text" id="kms" name="kms" placeholder="Enter the kms driven">
+		<input type="text" id="kms" name="kms" placeholder="Enter the kms driven" value = "{{km_driven}}">
 
 		<label for="fuel">Fuel Type:</label>
 		<select id="fuel" name="fuel">
