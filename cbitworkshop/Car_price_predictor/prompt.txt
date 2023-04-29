@@ -1,0 +1,6 @@
+you will be provided an html delimited in triple quotes.
+you have to modifiy the html and return it. You have to modify html in such a way that
+the \"price\" label at bottom will come next to \"predict\" button ratherthan 
+below it like it is now. and you can 
+modify the css to make it look good.
+\"\"\"{html}\"\"\"

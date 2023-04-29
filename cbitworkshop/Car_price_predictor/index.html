@@ -45,22 +45,41 @@
 		input[type="submit"]:hover {
 			background-color: #555;
 		}
+        .price-label {
+            display: inline-block;
+            margin-left: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+		.price-box {
+			display: inline-block;
+			text-align:center;
+			/* background-color: #ccc; */
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+		}
 	</style>
 </head>
 <body>
 	<h1>Car Price Predictor</h1>
-	<form action="/" >
+	<form action="/" method="post">
 		<label for="company">Company:</label>
 		<select id="company" name="company" >
-			{% for company in companies %}
+			{% for company_ in companies %}
+			{% if company_ != data['company'][0] %}
 			<option value="{{company}}">{{company}}</option>
+			{% enfif %}
+			{% if company_ == company %}
+			<option value="{{company}}" selected>{{company}}</option>
+			{% endif %}
 			{% endfor %}
 		</select>
 			
-		<label for="model">Car Model:</label>
-		<select id="model" name="model" >
-			{% for model in names models %}
-			<option value="{{model}}">{{model}}</option>
+		<label for="name">Car Model:</label>
+		<select id="name" name="name" >
+			{% for name in names %}
+			<option value="{{name}}">{{name}}</option>
 			{% endfor %}
 		</select>
 		
@@ -77,13 +96,20 @@
 
 		<label for="fuel">Fuel Type:</label>
 		<select id="fuel" name="fuel">
-			<option value="Petrol">Petrol</option>
-			<option value="Diesel">Diesel</option>
-			<option value="Cng">CNG</option>
+			{% for fuel in fuels %}
+			<option value="{{fuel}}">{{fuel}}</option>
+			{% endfor %}
 		</select>
 
+		<!-- <select id="fuel" name="fuel">
+			<option value="Petrol" >Petrol</option>
+			<option value="Diesel">Diesel</option>
+			<option value="Cng">CNG</option>
+		</select> -->
+
 		<input type="submit" value="Predict">
-		<label for="price">Price:</label>
+		<label class="price-label" for="price">Price:</label>
+		<div class="price-box"> {{price}} </div>
 	</form>
 	
 </body>
