@@ -26,6 +26,7 @@
 			font-weight: bold;
 		}
 		input[type="text"], select {
+			background-color: #e4dfdf;
 			padding: 10px;
 			border-radius: 5px;
 			border: none;
@@ -66,18 +67,15 @@
 	<form action="/" method="post">
 		<label for="company">Company:</label>
 		<select id="company" name="company" >
-			{% for company_ in companies %}
-			{% if company_ != data['company'][0] %}
+			<option value="None" selected>Select you car's company</option>
+			{% for company in companies %}
 			<option value="{{company}}">{{company}}</option>
-			{% enfif %}
-			{% if company_ == company %}
-			<option value="{{company}}" selected>{{company}}</option>
-			{% endif %}
 			{% endfor %}
 		</select>
 			
 		<label for="name">Car Model:</label>
 		<select id="name" name="name" >
+			<option value="None" selected>Select you car's model</option>
 			{% for name in names %}
 			<option value="{{name}}">{{name}}</option>
 			{% endfor %}
@@ -86,6 +84,7 @@
 
 		<label for="year">Year you bought the car::</label>
 		<select id="year" name="year" >
+			<option value="None" selected>Select year you bought the car</option>
 			{% for year in years %}
 			<option value="{{year}}">{{year}}</option>
 			{% endfor %}
@@ -96,16 +95,13 @@
 
 		<label for="fuel">Fuel Type:</label>
 		<select id="fuel" name="fuel">
+			<option value="None" selected>Select you car's fuel type</option>
 			{% for fuel in fuels %}
 			<option value="{{fuel}}">{{fuel}}</option>
 			{% endfor %}
 		</select>
 
-		<!-- <select id="fuel" name="fuel">
-			<option value="Petrol" >Petrol</option>
-			<option value="Diesel">Diesel</option>
-			<option value="Cng">CNG</option>
-		</select> -->
+	
 
 		<input type="submit" value="Predict">
 		<label class="price-label" for="price">Price:</label>
