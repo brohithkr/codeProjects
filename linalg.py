@@ -24,8 +24,14 @@ class Matrix:
         subarr = []
         for i in range(self.m):
             row = []
-            for j in range(self.n):
-                if 
+            if i!=k-1:
+                for j in range(self.n):
+                    if j!=l-1:
+                        row.append(self.data[i][j])
+                subarr.append(row)
+        submat = Matrix(subarr)
+        return submat
+            
 
 
 if __name__ == "__main__":
@@ -41,6 +47,9 @@ if __name__ == "__main__":
         [4,5,6],
         [7,8,9]
     ])
+
+    submat1 = mat1.submatrix(1, 1)
+    submat1.display()
 
     
 
