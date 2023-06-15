@@ -1,20 +1,24 @@
-def isprime(n):
-    isprime = True
-    for i in range(2,int(n**0.5)+1):
-        if n%i==0:
-            isprime = False
-            break
-    return isprime
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        freq =  {}
+        for i in s:
+            freq[i]=0
+        curmax = 0
+        maxlen = 0
+        j=0
+        while(j<len(s)):
+            freq[s[j]]+=1
+            curmax += 1
+            # print(curmax)
+            # print(freq,i,j)
+            if freq[s[j]]>1:
+                curmax=0
+                j-=1
+                for k in freq:
+                    freq[k]=0
+            maxlen = max(maxlen,curmax)
+            j = j+1
+        return maxlen
 
-def primeFactor(n):
-    lst = []
-    for i in range(2,int(n**0.5)+1):
-        if n%i==0:
-            if isprime(i):
-                lst.append(i)
-                if isprime(n/i):
-                    lst.append(int(n/i))
-    return lst
-
-# n = int(input())
-print(primeFactor(315))
+sol = Solution()
+print(sol.lengthOfLongestSubstring('aab'))
