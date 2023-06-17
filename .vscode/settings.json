@@ -1,0 +1,5 @@
+{
+    "scm.diffDecorations": "minimap",
+    "scm.diffDecorationsGutterVisibility": "hover",
+    "scm.diffDecorationsGutterAction": "none"
+}
