@@ -1,13 +1,13 @@
-use std::io;
-use rand::Rng;
+
+
 
 fn main() {
-    let mut guess = String::new();
+    let x: u32 = "24".parse().expect("Not a number!")
+    {
+        let x = x*2;
+        println!("{x}");
+    }
+    println!("{x}");
 
-    io::stdin()
-    .read_line(&mut guess)
-    .expect("Unable to take input");
-
-    let secret_number = rand::thread_rng().gen_range(1..=100);
     
 }
