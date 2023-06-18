@@ -1,13 +1,13 @@
 use std::io;
+use rand::Rng;
 
 fn main() {
-    let mut fname = String::new();
-    let mut lname = String::new();
+    let mut guess = String::new();
+
     io::stdin()
-    .read_line(&mut fname)
-    .expect("failed to read line");
-    io::stdin()
-    .read_line(&mut lname)
-    .expect("failed to read line");
-    println!("Hello {} {}",fname.trim_end(),lname.trim_end());
+    .read_line(&mut guess)
+    .expect("Unable to take input");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+    
 }
