@@ -7,10 +7,6 @@
             "label": "echo",
             "type": "shell",
             "command": "echo ${input:echoPrompt}",
-            // "group": {
-            //     "kind": "build",
-            //     "isDefault": true
-            // },
         },
         {
             "label": "cargo run",
@@ -41,6 +37,17 @@
                 "kind": "test",
                 "isDefault": true
             },
+        },
+        {
+            "label": "Rustlings",
+            "type": "shell",
+            "command": "rustlings ${input:rustlingsOpt}",
+            "options": {
+                "cwd": "/home/rohith/Documents/CodeProjects/codeProjects/Rust/rustlings"
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
         }
     ],
     "inputs": [
@@ -57,6 +64,13 @@
             "default": "check",
             "type": "pickString",
             "options": ["check","run","build"]
+        },
+        {
+            "id": "rustlingsOpt",
+            "description": "Please select an option",
+            "default": "run next",
+            "type": "pickString",
+            "options": ["run next","verify","watch"]
         }
 
     ]
