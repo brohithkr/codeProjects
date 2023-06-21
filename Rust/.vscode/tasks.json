@@ -63,7 +63,7 @@
             "description": "Please select a cargo task.",
             "default": "check",
             "type": "pickString",
-            "options": ["check","run","build"]
+            "options": ["check","run","build","build --release"]
         },
         {
             "id": "rustlingsOpt",

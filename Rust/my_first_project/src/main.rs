@@ -4,7 +4,7 @@ fn fibonacci(n: i32) {
     let mut prev = 1;
     let mut prevprev = 1;
     let mut k = 1;
-    while k<n {
+    while k<=n {
         if k==1{
             println!("1");
         }
