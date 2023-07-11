@@ -1,10 +1,14 @@
+use std::io;
 mod str_modules;
 
 fn main() {
-    let name = String::from("Rohith");
-    greet(&name);
-    str_modules::print_n_times(&name,5);
+    let mut s = String::new();
 
+    io::stdin()
+    .read_line(&mut s)
+    .expect("Error taking input");
+
+    println!("{}",str_modules::is_palindrome(&s));
 
 }
 
