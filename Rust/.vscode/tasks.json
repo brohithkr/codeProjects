@@ -9,6 +9,18 @@
             "command": "echo ${input:echoPrompt}",
         },
         {
+            "label": "rustc",
+            "type": "shell",
+            "command": "rustc ${filename}",
+            "options": {
+                "cwd": "${fileDirname}/.."
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            
+        },
+        {
             "label": "cargo run",
             "type": "shell",
             "command": "cargo run",
@@ -43,7 +55,7 @@
             "type": "shell",
             "command": "rustlings ${input:rustlingsOpt}",
             "options": {
-                "cwd": "/home/rohith/Documents/CodeProjects/codeProjects/Rust/rustlings"
+                "cwd": "C:/Users/brohi/Documents/codeProjects/Rust/rustlings"
             },
             "problemMatcher": [
                 "$rustc"

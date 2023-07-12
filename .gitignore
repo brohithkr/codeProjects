@@ -3,3 +3,6 @@ debug/
 deps/
 aimlw
 aiml
+
+**/__pycache__
+**/.venv
