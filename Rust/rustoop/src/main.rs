@@ -24,7 +24,7 @@ impl Student {
             }
         }
         Self {
-            fname: fname,
+            fname,
             lname: String::from(lname.trim())
         }
     }
@@ -42,13 +42,13 @@ impl Student {
 fn getcmdargs(s: &mut String) {
     let cmdargs = env::args();
     for i in cmdargs{
-        *s = *s + i;
+        *s = *s + &i;
     }
 }
 
 fn main() {
     let rohith = Student::from("Rohith Kumar");
-    let cmdarg: String;
+    let mut cmdarg: String = String::new();
     getcmdargs(&mut cmdarg);
     rohith.greet();
     rohith.display();

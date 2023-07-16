@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"c:\\Users\\brohi\\Documents\\codeProjects\\test.py","tests":[{"id":1689260547993,"input":"4 4\nBBBB\nWBBW\nWBBW\nWBBW","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\brohi\\Documents\\codeProjects\\test.py","group":"local","local":true}
