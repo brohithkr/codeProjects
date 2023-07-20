@@ -1,5 +1,5 @@
-use std::env;
-
+// use std::env;
+#![allow(dead_code)]
 
 #[derive(Debug)]
 struct Student {
@@ -39,17 +39,22 @@ impl Student {
 
 }
 
-fn getcmdargs(s: &mut String) {
-    let cmdargs = env::args();
-    for i in cmdargs{
-        *s = *s + &i;
-    }
-}
+// fn getcmdargs(s: &mut String) {
+//     let cmdargs = env::args();
+//     for i in cmdargs{
+//         *s = s + &i;
+//     }
+// }
 
 fn main() {
     let rohith = Student::from("Rohith Kumar");
-    let mut cmdarg: String = String::new();
-    getcmdargs(&mut cmdarg);
-    rohith.greet();
-    rohith.display();
+    // let mut cmdarg: String = String::new();
+    // getcmdargs(&mut cmdarg);
+    // rohith.greet();
+    // rohith.display();
+    let mut stu_vec = vec![Student::from("rohith bandari"), rohith];
+    println!("{:?}",stu_vec);
+    stu_vec.push(Student::from("Jai Parmar"));
+    println!("{:?}",stu_vec);
+
 }
