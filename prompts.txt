@@ -1,8 +1,0 @@
-create an html file with css appplied.\
-That should contain a form that takes input of\
-name, company, year, kms driven,and fuel type.\
-the puspose of webpage is to take all above inputs.\
-and predict price. The button at bottom should\
-be labelled predict and the title of page and heading should be\
-Price Prediction Model. You can capitalize field names to make them look good. \
-the style of css should be neat and sleek design.

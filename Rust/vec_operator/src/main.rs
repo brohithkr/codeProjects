@@ -47,6 +47,10 @@ fn get_a_num(v: &Vec<i32>) -> bool {
     }
 }
 
+// fn largest(list: &[i32]) -> &i32 {
+//     let mut largest = list[0];
+// }
+
 fn main() {
     let stdin = std::io::stdin();
     let mut v: Vec<i32> = Vec::new();
