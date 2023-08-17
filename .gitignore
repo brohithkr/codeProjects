@@ -6,3 +6,5 @@ aiml
 
 **/__pycache__
 **/.venv
+*env
+
