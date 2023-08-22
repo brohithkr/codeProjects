@@ -1,5 +1,7 @@
 {
     "scm.diffDecorations": "minimap",
     "scm.diffDecorationsGutterVisibility": "hover",
-    "scm.diffDecorationsGutterAction": "none"
+    "scm.diffDecorationsGutterAction": "none",
+    "avdmanager.executable": "/home/rohith/Android/Sdk/tools/bin/avdmanager",
+    "avdmanager.sdkManager": "/home/rohith/Android/Sdk/tools/bin/sdkmanager"
 }

@@ -1,11 +1,20 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.arange(40)
-y = (np.exp(x))
+rand = np.random.RandomState(283728)
+x = rand.randint(20,60,5)
+y = rand.randint(40,80,5)
 
-plt.plot(x,y)
-# plt.show()
-plt.savefig("hello.svg")
-# plt.close()
-# plt.savefig("hello2.svg")
+plt.scatter(x,y)
+
+plt.errorbar(
+    x = x[y<60],
+    y = y[y<60],
+    xerr = 1,
+    yerr = 2,
+    fmt = 'o',
+    color = 'red'
+)
+print(x,y)
+# print()
+plt.show()
