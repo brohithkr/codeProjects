@@ -6,113 +6,101 @@
  */
 
 import React from 'react';
+import {useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
+  Alert,
+  Pressable,
+  TextInput,
+  ScrollView,
+
 } from 'react-native';
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const [text, changeText] = useState('');
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+
+  // const backgroundStyle = {
+  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  // };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView >
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+//         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        barStyle={'light-content'}
+        backgroundColor={Colors.darker}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <View style={styles.viewStyle}><Text style={styles.textStyle}>Hello</Text></View>
+      <TextInput style={{
+        height: 30,
+        width: 80,
+        padding: 5,
+        marginStart: 'auto',
+        marginEnd: 'auto',
+        marginBottom: 5,
+        backgroundColor: '#e8e7e6',
+        borderRadius: 5
+      }}
+      onChangeText={changeText}
+      value={text}
+      />
+
+      <Pressable style={[styles.buttonStyle, /*({pressed}) => ((pressed) ?{ backgroundColor: "red" }*/]}
+      onPress={() => Alert.alert('Greetings!',`Hello! ${text}`)}
+      >
+        {/* {({pressed}) => (
+          <Text style={{
+            marginStart: 'auto',
+            marginEnd: 'auto'
+          }}>{(pressed) ? 'Stop pressing me!': 'Press Me !'}</Text>
+        )} */}
+        <Text style={{
+            marginStart: 'auto',
+            marginEnd: 'auto'
+          }} >Press Me!</Text>
+      </Pressable>
+
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+    textStyle: {
+      fontSize: 35
+    },
+    viewStyle: {
+      marginTop: 200,
+      marginStart: 'auto',
+      marginEnd: 'auto',
+      borderStyle: 'solid',
+      // backgroundColor: '#b1edfa',
+      // color: 'red'
+    },
+    buttonStyle: {
+      width: 200,
+      marginEnd: 'auto',
+      marginStart: 'auto',
+      backgroundColor:  '#9ef0d9',
+
+    }
 });
 
 export default App;
