@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./diesel_sqlite/Cargo.toml"
+    ]
+}

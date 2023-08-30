@@ -37,18 +37,23 @@ function App(): JSX.Element {
   const [text, changeText] = useState('');
 
 
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
 
   return (
-    <SafeAreaView >
+    <SafeAreaView style={{...backgroundStyle,height:1000}}>
       <StatusBar
 //         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         barStyle={'light-content'}
         backgroundColor={Colors.darker}
       />
-      <View style={styles.viewStyle}><Text style={styles.textStyle}>Hello</Text></View>
+      <View style={styles.viewStyle}>
+        <Text
+       style={[styles.textStyle,{color: isDarkMode ? 'white': 'black'}]}>
+        Hello
+       </Text>
+       </View>
       <TextInput style={{
         height: 30,
         width: 80,
@@ -56,14 +61,15 @@ function App(): JSX.Element {
         marginStart: 'auto',
         marginEnd: 'auto',
         marginBottom: 5,
-        backgroundColor: '#e8e7e6',
-        borderRadius: 5
+        backgroundColor: isDarkMode ? '#666564': '#e8e7e6',
+        borderRadius: 5,
+        color: isDarkMode ? 'white': 'black'
       }}
       onChangeText={changeText}
       value={text}
       />
 
-      <Pressable style={[styles.buttonStyle, /*({pressed}) => ((pressed) ?{ backgroundColor: "red" }*/]}
+      <Pressable style={[styles.buttonStyle,]}
       onPress={() => Alert.alert('Greetings!',`Hello! ${text}`)}
       >
         {/* {({pressed}) => (
@@ -74,7 +80,8 @@ function App(): JSX.Element {
         )} */}
         <Text style={{
             marginStart: 'auto',
-            marginEnd: 'auto'
+            marginEnd: 'auto',
+            
           }} >Press Me!</Text>
       </Pressable>
 
@@ -95,10 +102,15 @@ const styles = StyleSheet.create({
       // color: 'red'
     },
     buttonStyle: {
-      width: 200,
+      width: 100,
+      paddingTop: 5,
+      paddingBottom: 5,
       marginEnd: 'auto',
       marginStart: 'auto',
-      backgroundColor:  '#9ef0d9',
+      backgroundColor:  '#0476b8',
+      // color: isDarkMode ? 'white': 'black',
+      color: 'black',
+      borderRadius: 5,
 
     }
 });
