@@ -3,5 +3,8 @@
     "scm.diffDecorationsGutterVisibility": "hover",
     "scm.diffDecorationsGutterAction": "none",
     "avdmanager.executable": "/home/rohith/Android/Sdk/tools/bin/avdmanager",
-    "avdmanager.sdkManager": "/home/rohith/Android/Sdk/tools/bin/sdkmanager"
+    "avdmanager.sdkManager": "/home/rohith/Android/Sdk/tools/bin/sdkmanager",
+    "cmake.sourceDirectory": "/home/rohith/Documents/codeProjects/Rust/flutter_rust_bridge_template/linux",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic"
 }
