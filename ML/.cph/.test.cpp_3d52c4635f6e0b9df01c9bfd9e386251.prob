@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/mnt/SD/Documents/codeProjects/ML/test.cpp","tests":[{"id":1700120316113,"input":"5\n6 8 10 15 16","output":""},{"id":1700120318309,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/SD/Documents/codeProjects/ML/test.cpp","group":"local","local":true}
